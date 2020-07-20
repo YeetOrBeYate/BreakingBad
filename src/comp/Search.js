@@ -1,6 +1,10 @@
 import React from 'react'
+import {useSelector, useDispatch} from "react-redux"
 
 const Search = () => {
+
+    const dispatch = useDispatch()
+    const state = useSelector(state=>state)
 
     const [search,setSearch] = React.useState({
         value:''
@@ -12,7 +16,7 @@ const Search = () => {
 
     const submit=(e)=>{
         e.preventDefault()
-        console.log(search.value)
+        dispatch({type:'searchRequest', value:search.value})
     }
 
     return (
@@ -20,7 +24,7 @@ const Search = () => {
             <div className="container">
                 <form onSubmit={submit}>
                     <div className="field">
-                        <label className="label" for="searchBar">Name</label>
+                        <label className="label" htmlFor="searchBar">Name</label>
                         <div className="control">
                             <input 
                             className="input"
