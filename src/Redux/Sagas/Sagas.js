@@ -1,16 +1,7 @@
 import {take, fork, put, call} from "redux-saga/effects"
 import axios from "axios"
 
-function* search(value){
-    // return new Promise(async (resolve, reject)=>{
-    //     try {
-    //         const res = await axios.get(`https://www.breakingbadapi.com/api/characters?name=${value}`)
-    //         console.log(res.data)
-    //         resolve(res.data)
-    //     } catch (error) {
-    //         reject(error)
-    //     }
-    // })
+function search(value){
 
     return axios.get(`https://www.breakingbadapi.com/api/characters?name=${value}`)
 

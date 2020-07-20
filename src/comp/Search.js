@@ -4,8 +4,8 @@ import {useSelector, useDispatch} from "react-redux"
 const Search = () => {
 
     const dispatch = useDispatch()
-    const state = useSelector(state=>state)
-    // console.log(state)
+    const state = useSelector(state=>state.Person)
+    console.log(state)
 
     const [search,setSearch] = React.useState({
         value:''
@@ -21,7 +21,7 @@ const Search = () => {
     }
 
     return (
-        <div className="section">
+        <section className="section">
             <div className="container">
                 <form onSubmit={submit}>
                     <div className="field">
@@ -44,7 +44,7 @@ const Search = () => {
                     </div>
                 </form>
             </div>
-        </div>
+        </section>
     )
 }
 
