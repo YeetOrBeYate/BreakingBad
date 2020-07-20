@@ -5,6 +5,7 @@ const Search = () => {
 
     const dispatch = useDispatch()
     const state = useSelector(state=>state)
+    // console.log(state)
 
     const [search,setSearch] = React.useState({
         value:''
