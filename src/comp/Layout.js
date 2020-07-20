@@ -1,6 +1,6 @@
 import React from 'react'
 import {useSelector, useDispatch} from "react-redux"
-
+import CharacterCard from "./CharacterCard"
 
 const Layout = () => {
 
@@ -25,7 +25,7 @@ const Layout = () => {
                         {people.map((char,index)=>{
                             
                             if(index%2 === 0){
-                                return <p>{char.name}, left, {index}</p>
+                                return <CharacterCard key={index} person={char}/>
                             }
                         })}
                     </div>
@@ -33,7 +33,7 @@ const Layout = () => {
                         {people.map((char,index)=>{
 
                             if(index%2 === 1){
-                                return <p>{char.name}, right, {index}</p>
+                                return <CharacterCard key={index} person={char}/>
                             }
                             
                         })}
