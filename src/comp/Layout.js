@@ -8,13 +8,48 @@ const Layout = () => {
     let people = Person.person
 
 
-    if(!Person.person){
-        return(<div>no people yet!</div>)
+    if(!Person.person && !Person.loading && !Person.failure){
+        return(
+            <section className="section">
+                <div className="container">
+                    <div>
+                        no people yet! Start searching your favorite characters by name!
+                    </div>
+                </div>
+            </section>
+            )
     }
 
     if(Person.loading){
-        return(<div>loading...</div>)
+        return(
+            <section className="section">
+                <div className="container">
+                    <div>
+                        loading....
+                    </div>
+                </div>
+            </section>
+            )
     }
+
+    if(Person.failure || Person.person.length === 0){
+        return(
+            <section className="section">
+                <div className="container">
+                    <div>
+                        no results
+                        <span className="icon has-text-warning">
+                            <i className="fas fa-exclamation-triangle"></i>
+                        </span>
+                    </div>
+                </div>
+            </section>
+            )
+    }
+
+
+
+
 
 
     return (
