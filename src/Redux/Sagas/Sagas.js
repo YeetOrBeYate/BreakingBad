@@ -3,7 +3,7 @@ import axios from "axios"
 
 function search(value){
 
-    return axios.get(`https://www.breakingbaldapi.com/api/characters?name=${value}`)
+    return axios.get(`https://www.breakingbadapi.com/api/characters?name=${value}`)
 
             .then(res=>res.data)
 
