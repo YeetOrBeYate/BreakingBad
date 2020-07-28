@@ -1,5 +1,6 @@
 import React from 'react'
 import {useSelector, useDispatch} from "react-redux"
+import {createCharacterSearch} from "../Redux/Actions/characters"
 
 const Search = () => {
 
@@ -17,7 +18,7 @@ const Search = () => {
 
     const submit=(e)=>{
         e.preventDefault()
-        dispatch({type:'searchRequest', value:search.value})
+        dispatch({type:'searchRequest', payload:search.value})
     }
 
     return (
